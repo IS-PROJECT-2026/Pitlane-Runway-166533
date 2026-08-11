@@ -1,25 +1,17 @@
 :root {
-    /* Brand colours */
-    --aviation-navy: #0B3D5C;
-    --f1-red: #C8102E;
-
-    /* Neutral colours */
+    --dark-ruby: #70000E;
+    --neon-navy: #131936;
+    --bleached-sand: #E3D7BF;
     --white: #FFFFFF;
-    --off-white: #F7F8FA;
-    --light-grey: #E5E7EB;
-    --medium-grey: #6B7280;
-    --dark-grey: #374151;
-    --black: #111827;
+    --black: #000000;
+    --medium-grey: #767671;
+    --border-colour: rgba(19, 25, 54, 0.12);
+    --transition: 0.2s ease;
 
-    /* Typography */
-    --font-heading: Arial, Helvetica, sans-serif;
-    --font-body: Arial, Helvetica, sans-serif;
+    --font-heading: "Arial Black", Impact, sans-serif;
+    --font-body: "Bodoni Moda", Georgia, serif;
+    --font-ui: Arial, Helvetica, sans-serif;
 
-    /* Layout */
-    --content-width: 1200px;
-    --page-padding: 1.5rem;
-
-    /* Spacing */
     --space-xs: 0.5rem;
     --space-sm: 0.75rem;
     --space-md: 1rem;
@@ -27,13 +19,8 @@
     --space-xl: 2rem;
     --space-xxl: 4rem;
 
-    /* Borders */
-    --border-radius: 8px;
-    --border-colour: var(--light-grey);
-
-    /* Effects */
-    --shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-    --transition: 0.2s ease;
+    --content-width: 1200px;
+    --page-padding: 1rem;
 }
 
 * {
@@ -46,9 +33,10 @@ html {
 
 body {
     margin: 0;
-    background-color: var(--off-white);
+    background-color: var(--white);
     color: var(--black);
     font-family: var(--font-body);
+    font-size: 1.1rem;
     line-height: 1.6;
 }
 
@@ -58,16 +46,13 @@ img {
 }
 
 a {
-    color: var(--aviation-navy);
+    color: var(--neon-navy);
     text-decoration: none;
 }
 
 a:hover {
-    color: var(--f1-red);
+    color: var(--dark-ruby);
 }
-
-
-/*Shared Layout*/
 
 .container {
     width: min(100% - 2 * var(--page-padding), var(--content-width));
@@ -75,44 +60,44 @@ a:hover {
 }
 
 
-/*Header*/
-   
+/* Header — ruby red */
+
 .site-header {
-    background-color: var(--aviation-navy);
+    background-color: var(--dark-ruby);
     color: var(--white);
+    border-bottom: none;
 }
 
 .header-inner {
-    min-height: 80px;
+    min-height: 64px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: var(--space-lg);
+    flex-wrap: wrap;
+    padding: var(--space-sm) 0;
 }
 
 .brand {
     color: var(--white);
 }
 
-.brand:hover {
-    color: var(--white);
-}
-
 .brand-name {
     margin: 0;
     font-family: var(--font-heading);
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--white);
 }
 
 .brand-tagline {
-    margin: 0.15rem 0 0;
-    font-size: 0.8rem;
-    opacity: 0.85;
+    margin: 0.1rem 0 0;
+    max-width: 380px;
+    font-size: 0.7rem;
+    color: rgba(255, 255, 255, 0.75);
 }
-
-
-/*Navigation*/
 
 .site-nav ul {
     display: flex;
@@ -126,102 +111,385 @@ a:hover {
 .site-nav a {
     color: var(--white);
     font-weight: 600;
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
     padding: 0.5rem 0;
     border-bottom: 2px solid transparent;
-    transition: border-color var(--transition),
-                color var(--transition);
+    transition: border-color var(--transition), color var(--transition);
 }
 
 .site-nav a:hover,
 .site-nav a:focus {
     color: var(--white);
-    border-bottom-color: var(--f1-red);
+    border-bottom-color: var(--white);
 }
-
-
-/*Main Content*/
 
 main {
     min-height: 70vh;
 }
 
-.section {
+
+/* =========================================
+   Hero — "PIT LANE & RUNWAY" — solid neon navy.
+   Vertical stripe removed entirely.
+========================================= */
+
+.editorial-hero {
+    position: relative;
+    background-color: var(--neon-navy);
     padding: var(--space-xxl) 0;
 }
 
-.section-title {
-    margin-top: 0;
+.editorial-hero-grid {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-xxl);
+    align-items: center;
+}
+
+.hero-title {
+    padding: var(--space-lg) 0;
+}
+
+.hero-kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-sm);
+    margin: 0 0 var(--space-lg);
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+}
+
+.hero-kicker::before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--dark-ruby);
+}
+
+.hero-title h1 {
+    margin: 0;
+    color: var(--white);
     font-family: var(--font-heading);
-    color: var(--aviation-navy);
+    font-size: clamp(2.75rem, 6vw, 4.5rem);
+    font-weight: 800;
+    line-height: 1.02;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+}
+
+.hero-title h1 span {
+    color: var(--dark-ruby);
+}
+
+.hero-copy {
+    background-color: transparent;
+    color: var(--white);
+    padding: var(--space-lg) 0;
+}
+
+.hero-page-number {
+    margin: 0 0 var(--space-lg);
+    padding-top: var(--space-sm);
+    border-top: 1px solid rgba(255, 255, 255, 0.25);
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-align: right;
+}
+
+.hero-copy h2 {
+    margin: 0 0 var(--space-md);
+    color: var(--white);
+    font-family: var(--font-heading);
+    font-size: clamp(1.3rem, 2.2vw, 1.8rem);
+    text-transform: uppercase;
+}
+
+.hero-copy p:not(.hero-page-number) {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 0.95rem;
+    max-width: 420px;
+}
+
+.hero-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-md);
+    margin-top: var(--space-lg);
+}
+
+.hero-links a {
+    color: var(--white);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-size: 0.7rem;
+    padding: 0.6rem 1.1rem;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    transition: background-color var(--transition), color var(--transition), border-color var(--transition);
+}
+
+.hero-links a:hover {
+    background-color: var(--dark-ruby);
+    border-color: var(--dark-ruby);
+    color: var(--white);
 }
 
 
 /* =========================================
-   Buttons
-   ========================================= */
+   "What do you want to understand?" — white
+========================================= */
 
-.button {
-    display: inline-block;
-    padding: 0.7rem 1.2rem;
-    border-radius: var(--border-radius);
-    background-color: var(--f1-red);
-    color: var(--white);
-    font-weight: 700;
-    transition: transform var(--transition),
-                background-color var(--transition);
-}
-
-.button:hover,
-.button:focus {
-    background-color: #a80d27;
-    color: var(--white);
-    transform: translateY(-1px);
-}
-
-
-/*Cards*/
-
-.card {
+.explore-section {
+    padding: var(--space-xxl) 0;
     background-color: var(--white);
-    border: 1px solid var(--border-colour);
-    border-radius: var(--border-radius);
+}
+
+.section-heading {
+    max-width: 700px;
+    margin-bottom: var(--space-xxl);
+    text-align: center;
+    margin-inline: auto;
+}
+
+.section-label {
+    margin: 0 0 var(--space-sm);
+    color: var(--dark-ruby);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+}
+
+.section-heading h2 {
+    margin: 0 0 var(--space-md);
+    color: var(--neon-navy);
+    font-family: var(--font-heading);
+    font-size: clamp(1.8rem, 3.5vw, 2.75rem);
+    text-transform: uppercase;
+}
+
+.section-heading p:last-child {
+    margin-bottom: 0;
+    color: var(--medium-grey);
+}
+
+.domain-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-xl);
+}
+
+.domain-card {
+    position: relative;
+    min-height: 320px;
     padding: var(--space-xl);
-    box-shadow: var(--shadow);
+    background-color: var(--white);
+    color: var(--black);
+    border: 1px solid var(--border-colour);
+    border-top: 4px solid var(--dark-ruby);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.f1-card {
+    border-top-color: var(--neon-navy);
+}
+
+.domain-number {
+    margin: 0 0 var(--space-lg);
+    color: var(--dark-ruby);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    font-family: var(--font-ui);
+}
+
+.f1-card .domain-number {
+    color: var(--neon-navy);
+}
+
+.domain-card h3 {
+    margin: 0 0 var(--space-sm);
+    color: var(--black);
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    text-transform: uppercase;
+}
+
+.domain-card p:not(.domain-number) {
+    max-width: 460px;
+    margin-bottom: var(--space-lg);
+    color: var(--medium-grey);
+}
+
+.text-link {
+    color: var(--black);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    border-bottom: 1px solid var(--black);
+}
+
+.text-link:hover,
+.text-link:focus {
+    color: var(--dark-ruby);
+    border-bottom-color: var(--dark-ruby);
 }
 
 
-/*Footer*/
+/* =========================================
+   "We break systems down." — ruby red
+========================================= */
+
+.how-it-works {
+    padding: var(--space-xxl) 0;
+    background-color: var(--dark-ruby);
+}
+
+.how-it-works .section-heading h2 {
+    color: var(--white);
+}
+
+.how-it-works .section-label {
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.how-it-works .section-heading p:last-child {
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-xl);
+}
+
+.step-card {
+    padding: var(--space-xl);
+    background-color: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.step-number {
+    display: block;
+    margin-bottom: var(--space-lg);
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+.step-card h3 {
+    margin: 0 0 var(--space-sm);
+    color: var(--white);
+    font-family: var(--font-heading);
+    text-transform: uppercase;
+}
+
+.step-card p {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+
+/* =========================================
+   "Curious about what happens under the hood?" — white
+========================================= */
+
+.explore-callout {
+    padding: var(--space-xxl) 0;
+    background-color: var(--white);
+    color: var(--black);
+    text-align: center;
+}
+
+.callout-content {
+    max-width: 650px;
+    margin-inline: auto;
+}
+
+.explore-callout .section-label {
+    color: var(--dark-ruby);
+}
+
+.explore-callout h2 {
+    margin: 0 0 var(--space-md);
+    color: var(--neon-navy);
+    font-family: var(--font-heading);
+    font-size: clamp(1.8rem, 3.5vw, 2.75rem);
+    text-transform: uppercase;
+}
+
+.explore-callout p:last-of-type {
+    margin-bottom: 0;
+    color: var(--medium-grey);
+}
+
+.explore-callout .hero-links {
+    justify-content: center;
+}
+
+.explore-callout .hero-links a {
+    color: var(--black);
+    border: 1px solid var(--black);
+}
+
+.explore-callout .hero-links a:hover {
+    background-color: var(--dark-ruby);
+    border-color: var(--dark-ruby);
+    color: var(--white);
+}
+
+
+/* =========================================
+   Footer — neon navy
+========================================= */
 
 .site-footer {
-    background-color: var(--aviation-navy);
+    background-color: var(--neon-navy);
     color: var(--white);
     padding: var(--space-xl) 0;
-    margin-top: var(--space-xxl);
 }
 
 .site-footer p {
     margin: 0;
     text-align: center;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.65);
+    letter-spacing: 0.03em;
 }
 
 
-/*Responsive Layout*/
+/* =========================================
+   Responsive
+========================================= */
 
-@media (max-width: 700px) {
+@media (max-width: 800px) {
+    .editorial-hero-grid {
+        grid-template-columns: 1fr;
+    }
 
-    .header-inner {
+    .domain-grid,
+    .steps-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .hero-links {
         flex-direction: column;
         align-items: flex-start;
-        padding: var(--space-lg) 0;
     }
 
-    .site-nav ul {
-        flex-wrap: wrap;
-        gap: var(--space-md);
-    }
-
-    .section {
-        padding: var(--space-xl) 0;
+    .explore-callout .hero-links {
+        align-items: center;
     }
 }
