@@ -1,0 +1,41 @@
+{
+    "id": "how-f1-aerodynamics-work",
+    "domain": "f1",
+    "title": "How F1 Aerodynamics Work",
+    "introduction": "Learn how Formula 1 cars use airflow, wings and aerodynamic surfaces to generate downforce while managing drag.",
+    "sections": [
+        {
+            "id": "downforce",
+            "title": "Downforce",
+            "content": ""
+        },
+        {
+            "id": "drag",
+            "title": "Drag",
+            "content": ""
+        },
+        {
+            "id": "wings",
+            "title": "The Role of Wings",
+            "content": ""
+        },
+        {
+            "id": "airflow",
+            "title": "Airflow Around the Car",
+            "content": ""
+        },
+        {
+            "id": "aerodynamic-balance",
+            "title": "Aerodynamic Balance",
+            "content": ""
+        }
+    ],
+    "interactiveConcepts": [
+        "Downforce and drag relationship",
+        "Airflow around the car",
+        "Front and rear wing effects",
+        "Aerodynamic balance"
+    ],
+    "glossary": [],
+    "testYourself": []
+}

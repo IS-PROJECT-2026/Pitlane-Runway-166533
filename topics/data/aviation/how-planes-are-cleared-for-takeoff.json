@@ -1,0 +1,35 @@
+{
+    "id": "how-planes-are-cleared-for-takeoff",
+    "domain": "aviation",
+    "title": "How Planes Are Cleared for Takeoff",
+    "introduction": "Learn how an aircraft moves from being ready for departure to receiving clearance to take off.",
+    "sections": [
+        {
+            "id": "aircraft-readiness",
+            "title": "Aircraft Readiness",
+            "content": ""
+        },
+        {
+            "id": "taxi-and-ground-control",
+            "title": "Taxi and Ground Control",
+            "content": ""
+        },
+        {
+            "id": "departure-clearance",
+            "title": "Departure Clearance",
+            "content": ""
+        },
+        {
+            "id": "takeoff-clearance",
+            "title": "Takeoff Clearance",
+            "content": ""
+        }
+    ],
+    "interactiveConcepts": [
+        "Aircraft movement from parking position to runway",
+        "Ground and tower control communication",
+        "Takeoff clearance sequence"
+    ],
+    "glossary": [],
+    "testYourself": []
+}
