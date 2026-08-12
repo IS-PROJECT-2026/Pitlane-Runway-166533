@@ -493,3 +493,119 @@ main {
         align-items: center;
     }
 }
+
+/* Topic Template */
+
+.topic-page {
+    background-color: var(--white);
+}
+
+.topic-header {
+    padding: var(--space-xxl) 0;
+    background-color: var(--neon-navy);
+    color: var(--white);
+}
+
+.topic-header h1 {
+    margin: 0 0 var(--space-lg);
+    color: var(--white);
+    font-family: var(--font-heading);
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    line-height: 1.05;
+    text-transform: uppercase;
+}
+
+.topic-header .section-label {
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.topic-introduction {
+    max-width: 750px;
+    margin: 0;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.15rem;
+}
+
+.topic-section {
+    padding: var(--space-xxl) 0;
+}
+
+.topic-section h2,
+.topic-diagram h2,
+.topic-test h2 {
+    margin-top: 0;
+    color: var(--neon-navy);
+    font-family: var(--font-heading);
+    text-transform: uppercase;
+}
+
+.topic-section p {
+    max-width: 800px;
+}
+
+.topic-diagram {
+    padding: var(--space-xxl) 0;
+    background-color: var(--dark-ruby);
+    color: var(--white);
+}
+
+.topic-diagram h2 {
+    color: var(--white);
+}
+
+.diagram-placeholder {
+    max-width: 900px;
+    min-height: 260px;
+    padding: var(--space-xl);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.diagram-placeholder p {
+    margin: 0.25rem 0;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.topic-glossary {
+    max-width: 800px;
+    margin: 0;
+}
+
+.topic-glossary div {
+    padding: var(--space-lg) 0;
+    border-bottom: 1px solid var(--border-colour);
+}
+
+.topic-glossary dt {
+    margin-bottom: var(--space-xs);
+    color: var(--dark-ruby);
+    font-family: var(--font-ui);
+    font-weight: 700;
+}
+
+.topic-glossary dd {
+    margin: 0;
+    color: var(--medium-grey);
+}
+
+.topic-test {
+    padding: var(--space-xxl) 0;
+    background-color: var(--neon-navy);
+    color: var(--white);
+}
+
+.topic-test h2 {
+    color: var(--white);
+}
+
+.topic-test p {
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.topic-navigation {
+    padding: var(--space-xl) 0;
+}
