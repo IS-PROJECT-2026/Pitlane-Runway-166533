@@ -609,3 +609,224 @@ main {
 .topic-navigation {
     padding: var(--space-xl) 0;
 }
+.takeoff-simulation {
+    max-width: 1000px;
+    margin: var(--space-xl) auto 0;
+}
+
+.topic-diagram-introduction {
+    max-width: 750px;
+    color: rgba(255, 255, 255, 0.8);
+}
+.simulation-status {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-md);
+    margin-bottom: var(--space-lg);
+}
+
+.simulation-status > div {
+    padding: var(--space-md);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.simulation-label {
+    display: block;
+    margin-bottom: var(--space-xs);
+    font-family: var(--font-ui);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: rgba(255, 255, 255, 0.65);
+}
+
+.simulation-status strong {
+    color: var(--white);
+    font-family: var(--font-ui);
+}
+.runway-scene {
+    position: relative;
+    height: 360px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    background-color: #8fb8d8;
+}
+.runway-sky {
+    position: absolute;
+    inset: 0 0 42%;
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(255, 255, 255, 0.15),
+            rgba(255, 255, 255, 0)
+        );
+}
+.runway-ground {
+    position: absolute;
+    inset: 58% 0 0;
+    background-color: #68736f;
+}
+.runway {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 25%;
+    height: 55%;
+    background-color: #30343a;
+}
+.runway-centre-line {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    height: 4px;
+    background: repeating-linear-gradient(
+        to right,
+        var(--white) 0,
+        var(--white) 55px,
+        transparent 55px,
+        transparent 100px
+    );
+}
+.aircraft {
+    position: absolute;
+    left: 8%;
+    bottom: 42%;
+    width: 110px;
+    height: 45px;
+    z-index: 5;
+    transform-origin: center center;
+    transition:
+        left 0.15s linear,
+        bottom 0.15s linear,
+        transform 0.15s linear;
+}
+.aircraft-body {
+    position: absolute;
+    left: 0;
+    top: 16px;
+    width: 100px;
+    height: 14px;
+    border-radius: 50% 55% 55% 50%;
+    background-color: var(--white);
+}
+.aircraft-wing-main {
+    position: absolute;
+    left: 35px;
+    top: 7px;
+    width: 45px;
+    height: 32px;
+    background-color: var(--white);
+    clip-path: polygon(0 50%, 100% 0, 70% 100%);
+}
+.aircraft-tail {
+    position: absolute;
+    left: 8px;
+    top: 5px;
+    width: 18px;
+    height: 25px;
+    background-color: var(--white);
+    clip-path: polygon(0 100%, 100% 0, 100% 100%);
+}
+.takeoff-point {
+    position: absolute;
+    right: 8%;
+    bottom: 42%;
+    height: 75px;
+    border-left: 2px dashed rgba(255, 255, 255, 0.7);
+    padding-left: var(--space-sm);
+    color: var(--white);
+    font-family: var(--font-ui);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+}
+.simulation-controls {
+    display: flex;
+    gap: var(--space-md);
+    margin-top: var(--space-lg);
+}
+.simulation-button {
+    padding: var(--space-md) var(--space-xl);
+    border: 1px solid var(--white);
+    background-color: var(--white);
+    color: var(--neon-navy);
+    font-family: var(--font-ui);
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.simulation-button:hover {
+    opacity: 0.85;
+}
+
+.simulation-button.secondary {
+    background-color: transparent;
+    color: var(--white);
+}
+.simulation-progress {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: var(--space-sm);
+    margin-top: var(--space-xl);
+}
+.simulation-progress-step {
+    padding: var(--space-sm);
+    border-top: 2px solid rgba(255, 255, 255, 0.25);
+    color: rgba(255, 255, 255, 0.55);
+    font-family: var(--font-ui);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.simulation-progress-step.active {
+    border-top-color: var(--white);
+    color: var(--white);
+}
+.simulation-progress-step span {
+    display: block;
+    margin-bottom: var(--space-xs);
+    opacity: 0.65;
+}
+.simulation-explanation {
+    max-width: 800px;
+    margin-top: var(--space-xl);
+    padding: var(--space-xl);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+}
+.simulation-explanation h3 {
+    margin-top: 0;
+    color: var(--white);
+    font-family: var(--font-heading);
+    text-transform: uppercase;
+}
+.simulation-explanation p {
+    color: rgba(255, 255, 255, 0.8);
+}
+@media (max-width: 700px) {
+
+    .simulation-status {
+        grid-template-columns: 1fr;
+    }
+
+    .runway-scene {
+        height: 280px;
+    }
+
+    .simulation-progress {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .simulation-controls {
+        flex-direction: column;
+    }
+
+    .simulation-button {
+        width: 100%;
+    }
+
+    .takeoff-simulation {
+        padding: 0 var(--space-md);
+    }
+}
