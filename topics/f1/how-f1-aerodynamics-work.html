@@ -267,31 +267,191 @@
         <!-- Interactive Opportunities -->
 
         <section class="topic-diagram">
-            <div class="container">
+    <div class="container">
 
-                <p class="section-label">
-                    VISUAL EXPLANATION
-                </p>
+        <p class="section-label">
+            INTERACTIVE EXPERIENCE
+        </p>
 
-                <h2>Interactive Diagram</h2>
+        <h2>F1 Aerodynamics Simulation</h2>
 
-                <div class="diagram-placeholder">
+        <p class="topic-diagram-introduction">
+            Adjust the car's speed and aerodynamic settings to see how
+            downforce, drag and aerodynamic balance change.
+        </p>
 
-                    <p>
-                        Interactive diagram placeholder.
-                    </p>
+        <div class="aero-simulation">
 
-                    <p>
-                        This area could later show airflow around an F1 car,
-                        including downforce, drag and the effects of changing
-                        aerodynamic surfaces.
-                    </p>
+            <div class="aero-status">
+
+                <div>
+                    <span class="simulation-label">
+                        SPEED
+                    </span>
+
+                    <strong>
+                        <span id="aero-speed-value">200</span> km/h
+                    </strong>
+                </div>
+
+                <div>
+                    <span class="simulation-label">
+                        DOWNFORCE
+                    </span>
+
+                    <strong>
+                        <span id="aero-downforce-value">100</span> %
+                    </strong>
+                </div>
+
+                <div>
+                    <span class="simulation-label">
+                        DRAG
+                    </span>
+
+                    <strong>
+                        <span id="aero-drag-value">60</span> %
+                    </strong>
+                </div>
+
+                <div>
+                    <span class="simulation-label">
+                        BALANCE
+                    </span>
+
+                    <strong id="aero-balance-value">
+                        BALANCED
+                    </strong>
+                </div>
+
+            </div>
+
+            <div class="aero-scene">
+
+                <div class="airflow airflow-one"></div>
+                <div class="airflow airflow-two"></div>
+                <div class="airflow airflow-three"></div>
+                <div class="airflow airflow-four"></div>
+
+                <div
+                    class="f1-car"
+                    id="f1-car"
+                    aria-label="Simplified Formula 1 car"
+                >
+
+                    <div class="f1-front-wing"></div>
+
+                    <div class="f1-nose"></div>
+
+                    <div class="f1-body"></div>
+
+                    <div class="f1-cockpit"></div>
+
+                    <div class="f1-rear-wing"></div>
+
+                    <div class="f1-wheel front-wheel"></div>
+                    <div class="f1-wheel rear-wheel"></div>
+
+                </div>
+
+                <div class="aero-force aero-force-down">
+                    DOWNFORCE
+                </div>
+
+                <div class="aero-force aero-force-drag">
+                    DRAG
+                </div>
+
+            </div>
+
+            <div class="aero-controls">
+
+                <div class="aero-control">
+
+                    <label for="aero-speed">
+                        Speed
+                    </label>
+
+                    <input
+                        type="range"
+                        id="aero-speed"
+                        min="100"
+                        max="350"
+                        value="200"
+                        step="10"
+                    >
+
+                    <output id="aero-speed-output">
+                        200 km/h
+                    </output>
+
+                </div>
+
+                <div class="aero-control">
+
+                    <label for="front-wing">
+                        Front Wing
+                    </label>
+
+                    <input
+                        type="range"
+                        id="front-wing"
+                        min="1"
+                        max="5"
+                        value="3"
+                        step="1"
+                    >
+
+                    <output id="front-wing-output">
+                        3 / 5
+                    </output>
+
+                </div>
+
+                <div class="aero-control">
+
+                    <label for="rear-wing">
+                        Rear Wing
+                    </label>
+
+                    <input
+                        type="range"
+                        id="rear-wing"
+                        min="1"
+                        max="5"
+                        value="3"
+                        step="1"
+                    >
+
+                    <output id="rear-wing-output">
+                        3 / 5
+                    </output>
 
                 </div>
 
             </div>
-        </section>
 
+            <div class="aero-explanation">
+
+                <p class="section-label">
+                    WHAT IS HAPPENING?
+                </p>
+
+                <h3 id="aero-explanation-title">
+                    Balanced Aerodynamics
+                </h3>
+
+                <p id="aero-explanation-text">
+                    The front and rear aerodynamic settings are working
+                    together to produce a relatively balanced car.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
         <section class="topic-section interactive-opportunities">
             <div class="container">
 
@@ -454,6 +614,6 @@
             <p>&copy; 2026 Pit Lane & Runway.</p>
         </div>
     </footer>
-
+<script src="../../scripts/topic-interactions.js"></script>
 </body>
 </html>

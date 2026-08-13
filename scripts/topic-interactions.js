@@ -195,3 +195,116 @@ document.addEventListener("DOMContentLoaded", () => {
 
     showStage(0);
 });
+document.addEventListener("DOMContentLoaded", () => {
+    const speedControl = document.querySelector("#aero-speed");
+    const frontWingControl = document.querySelector("#front-wing");
+    const rearWingControl = document.querySelector("#rear-wing");
+
+    const speedValue = document.querySelector("#aero-speed-value");
+    const downforceValue = document.querySelector("#aero-downforce-value");
+    const dragValue = document.querySelector("#aero-drag-value");
+    const balanceValue = document.querySelector("#aero-balance-value");
+
+    const speedOutput = document.querySelector("#aero-speed-output");
+    const frontWingOutput = document.querySelector("#front-wing-output");
+    const rearWingOutput = document.querySelector("#rear-wing-output");
+
+    const explanationTitle = document.querySelector(
+        "#aero-explanation-title"
+    );
+
+    const explanationText = document.querySelector(
+        "#aero-explanation-text"
+    );
+
+    if (
+        !speedControl ||
+        !frontWingControl ||
+        !rearWingControl
+    ) {
+        return;
+    }
+
+    function updateAerodynamics() {
+        const speed = Number(speedControl.value);
+        const frontWing = Number(frontWingControl.value);
+        const rearWing = Number(rearWingControl.value);
+
+        /*
+         * These calculations are intentionally simplified.
+         * They are used to demonstrate relationships rather than
+         * represent real F1 aerodynamic data.
+         */
+
+        const downforce = Math.round(
+            ((speed / 200) ** 2) *
+            ((frontWing + rearWing) / 6) *
+            100
+        );
+
+        const drag = Math.round(
+            ((speed / 200) ** 2) *
+            ((frontWing + rearWing) / 6) *
+            60
+        );
+
+        const balanceDifference =
+            frontWing - rearWing;
+
+        let balance;
+        let title;
+        let explanation;
+
+        if (balanceDifference >= 2) {
+            balance = "FRONT BIASED";
+
+            title = "Front-Heavy Aerodynamic Balance";
+
+            explanation =
+                "The front wing is producing substantially more aerodynamic effect than the rear wing. In a real car, an excessive front bias can make the rear feel less stable.";
+        } else if (balanceDifference <= -2) {
+            balance = "REAR BIASED";
+
+            title = "Rear-Heavy Aerodynamic Balance";
+
+            explanation =
+                "The rear wing is producing substantially more aerodynamic effect than the front wing. More rear aerodynamic load can improve rear stability, but excessive drag can reduce straight-line speed.";
+        } else {
+            balance = "BALANCED";
+
+            title = "Balanced Aerodynamics";
+
+            explanation =
+                "The front and rear aerodynamic settings are working together to produce a relatively balanced car.";
+        }
+
+        speedValue.textContent = speed;
+        downforceValue.textContent = downforce;
+        dragValue.textContent = drag;
+        balanceValue.textContent = balance;
+
+        speedOutput.textContent = `${speed} km/h`;
+        frontWingOutput.textContent = `${frontWing} / 5`;
+        rearWingOutput.textContent = `${rearWing} / 5`;
+
+        explanationTitle.textContent = title;
+        explanationText.textContent = explanation;
+    }
+
+    speedControl.addEventListener(
+        "input",
+        updateAerodynamics
+    );
+
+    frontWingControl.addEventListener(
+        "input",
+        updateAerodynamics
+    );
+
+    rearWingControl.addEventListener(
+        "input",
+        updateAerodynamics
+    );
+
+    updateAerodynamics();
+});

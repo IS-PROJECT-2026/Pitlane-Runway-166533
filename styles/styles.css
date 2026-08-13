@@ -527,7 +527,7 @@ main {
 }
 
 .topic-section {
-    padding: var(--space-xxl) 0;
+    padding: var(--space-md) 0;
 }
 
 .topic-section h2,
@@ -828,5 +828,237 @@ main {
 
     .takeoff-simulation {
         padding: 0 var(--space-md);
+    }
+}
+/* F1 Aerodynamics Simulation */
+
+.aero-simulation {
+    max-width: 1000px;
+    margin: var(--space-xl) auto 0;
+}
+
+.aero-status {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-md);
+    margin-bottom: var(--space-lg);
+}
+
+.aero-status > div {
+    padding: var(--space-md);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.aero-scene {
+    position: relative;
+    height: 360px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    background-color: #1b1f26;
+}
+
+.airflow {
+    position: absolute;
+    left: -10%;
+    width: 120%;
+    height: 2px;
+    background-color: rgba(255, 255, 255, 0.3);
+    animation: airflowMove 2s linear infinite;
+}
+
+.airflow-one {
+    top: 25%;
+}
+
+.airflow-two {
+    top: 38%;
+    animation-delay: 0.4s;
+}
+
+.airflow-three {
+    top: 52%;
+    animation-delay: 0.8s;
+}
+
+.airflow-four {
+    top: 68%;
+    animation-delay: 1.2s;
+}
+
+@keyframes airflowMove {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(15%);
+    }
+}
+
+.f1-car {
+    position: absolute;
+    left: 50%;
+    top: 55%;
+    width: 380px;
+    height: 100px;
+    transform: translate(-50%, -50%);
+    transition: transform 0.25s ease;
+    z-index: 5;
+}
+
+.f1-body {
+    position: absolute;
+    left: 70px;
+    top: 35px;
+    width: 240px;
+    height: 45px;
+    border-radius: 35% 45% 20% 20%;
+    background-color: var(--white);
+}
+
+.f1-nose {
+    position: absolute;
+    left: 25px;
+    top: 48px;
+    width: 100px;
+    height: 20px;
+    background-color: var(--white);
+    clip-path: polygon(0 50%, 100% 0, 100% 100%);
+}
+
+.f1-cockpit {
+    position: absolute;
+    left: 170px;
+    top: 20px;
+    width: 65px;
+    height: 35px;
+    border-radius: 50% 50% 0 0;
+    background-color: var(--dark-ruby);
+}
+
+.f1-front-wing {
+    position: absolute;
+    left: 5px;
+    top: 58px;
+    width: 80px;
+    height: 8px;
+    background-color: var(--white);
+}
+
+.f1-rear-wing {
+    position: absolute;
+    right: 20px;
+    top: 8px;
+    width: 45px;
+    height: 55px;
+    border: 7px solid var(--white);
+}
+
+.f1-wheel {
+    position: absolute;
+    bottom: 5px;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background-color: #111;
+    border: 5px solid #444;
+}
+
+.front-wheel {
+    left: 75px;
+}
+
+.rear-wheel {
+    right: 65px;
+}
+
+.aero-force {
+    position: absolute;
+    z-index: 10;
+    padding: var(--space-sm);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    color: var(--white);
+    font-family: var(--font-ui);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+}
+
+.aero-force-down {
+    left: 48%;
+    bottom: 8%;
+}
+
+.aero-force-drag {
+    right: 5%;
+    top: 48%;
+}
+
+.aero-controls {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-lg);
+    margin-top: var(--space-xl);
+}
+
+.aero-control {
+    padding: var(--space-lg);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.aero-control label {
+    display: block;
+    margin-bottom: var(--space-sm);
+    color: var(--white);
+    font-family: var(--font-ui);
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.aero-control input {
+    width: 100%;
+}
+
+.aero-control output {
+    display: block;
+    margin-top: var(--space-sm);
+    color: rgba(255, 255, 255, 0.75);
+    font-family: var(--font-ui);
+}
+
+.aero-explanation {
+    max-width: 800px;
+    margin-top: var(--space-xl);
+    padding: var(--space-xl);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.aero-explanation h3 {
+    margin-top: 0;
+    color: var(--white);
+    font-family: var(--font-heading);
+    text-transform: uppercase;
+}
+
+.aero-explanation p {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+@media (max-width: 700px) {
+
+    .aero-status {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .aero-controls {
+        grid-template-columns: 1fr;
+    }
+
+    .aero-scene {
+        height: 280px;
+    }
+
+    .f1-car {
+        transform: translate(-50%, -50%) scale(0.7);
     }
 }
