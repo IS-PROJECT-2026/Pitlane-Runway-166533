@@ -541,58 +541,66 @@
         <section class="topic-test">
             <div class="container">
 
-                <p class="section-label">
-                    TEST YOURSELF
-                </p>
+    <p class="section-label">TEST YOURSELF</p>
 
-                <h2>Check your understanding</h2>
+    <h2>Check Your Understanding</h2>
 
-                <div class="test-question">
+    <div
+        class="topic-quiz"
+        data-quiz="f1"
+    >
 
-                    <h3>01. What is downforce?</h3>
+        <div class="quiz-progress">
+            Question
+            <span class="quiz-current">1</span>
+            of
+            <span class="quiz-total">3</span>
+        </div>
 
-                    <details>
-                        <summary>Show answer</summary>
-                        <p>
-                            Downforce is an aerodynamic force that pushes the car
-                            towards the track, helping the tyres maintain grip.
-                        </p>
-                    </details>
+        <h3 class="quiz-question"></h3>
 
-                </div>
+        <div
+            class="quiz-options"
+            role="group"
+            aria-label="Answer options"
+        ></div>
 
-                <div class="test-question">
+        <div
+            class="quiz-feedback"
+            aria-live="polite"
+        ></div>
 
-                    <h3>02. Why can't teams simply maximise downforce?</h3>
+        <button
+            type="button"
+            class="quiz-next text-link"
+            hidden
+        >
+            Next Question →
+        </button>
 
-                    <details>
-                        <summary>Show answer</summary>
-                        <p>
-                            Increasing aerodynamic load can also increase drag,
-                            which can reduce straight-line performance. Teams
-                            therefore need to find an appropriate balance.
-                        </p>
-                    </details>
+        <div class="quiz-result" hidden>
+            <p class="section-label">RESULT</p>
 
-                </div>
+            <h3>
+                You scored
+                <span class="quiz-score">0</span>
+                /
+                <span class="quiz-score-total">3</span>
+            </h3>
 
-                <div class="test-question">
+            <p class="quiz-result-message"></p>
 
-                    <h3>03. Why does aerodynamic balance matter?</h3>
+            <button
+                type="button"
+                class="quiz-restart"
+            >
+                Try Again
+            </button>
+        </div>
 
-                    <details>
-                        <summary>Show answer</summary>
-                        <p>
-                            The distribution of aerodynamic forces affects how
-                            predictable and controllable the car is. A suitable
-                            balance helps the driver maintain control and
-                            performance throughout a lap.
-                        </p>
-                    </details>
+    </div>
 
-                </div>
-
-            </div>
+</div>
         </section>
 
         <!-- Navigation -->
