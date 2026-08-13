@@ -308,3 +308,248 @@ document.addEventListener("DOMContentLoaded", () => {
 
     updateAerodynamics();
 });
+document.addEventListener("DOMContentLoaded", () => {
+    const quizzes = document.querySelectorAll(".topic-quiz");
+
+    if (!quizzes.length) {
+        return;
+    }
+
+    const quizData = {
+        aviation: [
+            {
+                question: "Who normally gives the final takeoff clearance?",
+                options: [
+                    "The cabin crew",
+                    "Air Traffic Control",
+                    "The airport security team",
+                    "The passengers"
+                ],
+                answer: 1,
+                explanation:
+                    "Air Traffic Control gives the aircraft its takeoff clearance when the runway and surrounding traffic situation allow it to depart safely."
+            },
+            {
+                question: "What does a pilot normally do if a takeoff instruction is unclear?",
+                options: [
+                    "Take off immediately",
+                    "Ignore the instruction",
+                    "Clarify the instruction with ATC",
+                    "Ask another passenger"
+                ],
+                answer: 2,
+                explanation:
+                    "The pilot should clarify an unclear instruction with ATC rather than guessing or proceeding without understanding it."
+            },
+            {
+                question: "What is a taxiway used for?",
+                options: [
+                    "Moving aircraft between airport areas",
+                    "Measuring aircraft altitude",
+                    "Controlling cabin temperature",
+                    "Storing passenger luggage"
+                ],
+                answer: 0,
+                explanation:
+                    "Taxiways provide the routes aircraft use to move between parking areas, runways and other parts of the airport."
+            }
+        ],
+
+        f1: [
+            {
+                question: "What is the main purpose of aerodynamic downforce?",
+                options: [
+                    "To make the car lighter",
+                    "To push the car toward the track",
+                    "To increase engine temperature",
+                    "To reduce tyre contact"
+                ],
+                answer: 1,
+                explanation:
+                    "Downforce pushes the car toward the track, increasing the load on the tyres and helping the car generate grip through corners."
+            },
+            {
+                question: "What is aerodynamic drag?",
+                options: [
+                    "A force that opposes the car's motion through the air",
+                    "The force that turns the steering wheel",
+                    "The weight of the driver",
+                    "The force produced by the brakes"
+                ],
+                answer: 0,
+                explanation:
+                    "Drag is aerodynamic resistance that acts against the car's movement through the air. Reducing drag can help improve straight-line speed."
+            },
+            {
+                question: "Why is aerodynamic balance important?",
+                options: [
+                    "It determines the driver's helmet size",
+                    "It controls the fuel colour",
+                    "It helps distribute aerodynamic load between the front and rear",
+                    "It determines the race length"
+                ],
+                answer: 2,
+                explanation:
+                    "Aerodynamic balance describes how aerodynamic load is distributed between the front and rear of the car. A suitable balance helps the car remain predictable and stable."
+            }
+        ]
+    };
+
+    quizzes.forEach((quiz) => {
+        const quizType = quiz.dataset.quiz;
+        const questions = quizData[quizType];
+
+        if (!questions) {
+            return;
+        }
+
+        const currentElement =
+            quiz.querySelector(".quiz-current");
+
+        const totalElement =
+            quiz.querySelector(".quiz-total");
+
+        const questionElement =
+            quiz.querySelector(".quiz-question");
+
+        const optionsElement =
+            quiz.querySelector(".quiz-options");
+
+        const feedbackElement =
+            quiz.querySelector(".quiz-feedback");
+
+        const nextButton =
+            quiz.querySelector(".quiz-next");
+
+        const resultElement =
+            quiz.querySelector(".quiz-result");
+
+        const scoreElement =
+            quiz.querySelector(".quiz-score");
+
+        const scoreTotalElement =
+            quiz.querySelector(".quiz-score-total");
+
+        const resultMessage =
+            quiz.querySelector(".quiz-result-message");
+
+        const restartButton =
+            quiz.querySelector(".quiz-restart");
+
+        let currentQuestion = 0;
+        let score = 0;
+
+        totalElement.textContent = questions.length;
+        scoreTotalElement.textContent = questions.length;
+
+        function showQuestion() {
+            const question = questions[currentQuestion];
+
+            currentElement.textContent = currentQuestion + 1;
+
+            questionElement.textContent =
+                question.question;
+
+            optionsElement.innerHTML = "";
+            feedbackElement.textContent = "";
+
+            nextButton.hidden = true;
+            resultElement.hidden = true;
+
+            question.options.forEach((option, index) => {
+                const button =
+                    document.createElement("button");
+
+                button.type = "button";
+                button.className = "quiz-option";
+                button.textContent = option;
+
+                button.addEventListener(
+                    "click",
+                    () => selectAnswer(index)
+                );
+
+                optionsElement.appendChild(button);
+            });
+        }
+
+        function selectAnswer(selectedIndex) {
+            const question = questions[currentQuestion];
+
+            const optionButtons =
+                optionsElement.querySelectorAll(
+                    ".quiz-option"
+                );
+
+            optionButtons.forEach((button) => {
+                button.disabled = true;
+            });
+
+            if (selectedIndex === question.answer) {
+                score++;
+
+                feedbackElement.textContent =
+                    `Correct. ${question.explanation}`;
+            } else {
+                feedbackElement.textContent =
+                    `Not quite. ${question.explanation}`;
+            }
+
+            optionButtons[question.answer]
+                .classList.add("correct");
+
+            if (selectedIndex !== question.answer) {
+                optionButtons[selectedIndex]
+                    .classList.add("incorrect");
+            }
+
+            nextButton.hidden = false;
+        }
+
+        function showResult() {
+            optionsElement.innerHTML = "";
+            feedbackElement.textContent = "";
+            nextButton.hidden = true;
+
+            resultElement.hidden = false;
+
+            scoreElement.textContent = score;
+
+            if (score === questions.length) {
+                resultMessage.textContent =
+                    "Excellent. You have a strong understanding of this topic.";
+            } else if (score >= 2) {
+                resultMessage.textContent =
+                    "Good work. Review the explanations for the questions you missed.";
+            } else {
+                resultMessage.textContent =
+                    "Keep exploring the topic and try the quiz again.";
+            }
+        }
+
+        nextButton.addEventListener(
+            "click",
+            () => {
+                currentQuestion++;
+
+                if (currentQuestion >= questions.length) {
+                    showResult();
+                } else {
+                    showQuestion();
+                }
+            }
+        );
+
+        restartButton.addEventListener(
+            "click",
+            () => {
+                currentQuestion = 0;
+                score = 0;
+
+                showQuestion();
+            }
+        );
+
+        showQuestion();
+    });
+});
