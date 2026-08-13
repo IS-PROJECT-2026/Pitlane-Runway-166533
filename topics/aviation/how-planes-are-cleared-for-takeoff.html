@@ -136,28 +136,165 @@
               </div>
             </section>
 
-            <section class="topic-diagram">
-                <div class="container">
+           <section class="topic-diagram">
+    <div class="container">
 
-                    <p class="section-label">
-                        VISUAL EXPLANATION
-                    </p>
+        <p class="section-label">
+            INTERACTIVE EXPERIENCE
+        </p>
 
-                    <h2>Interactive Diagram</h2>
+        <h2>Takeoff Simulation</h2>
 
-                    <div class="diagram-placeholder">
-                        <p>
-                            Interactive diagram placeholder.
-                        </p>
+        <p class="topic-diagram-introduction">
+            Follow an aircraft through the final stages of its departure.
+            Start the simulation to see how clearance, acceleration and
+            liftoff fit together.
+        </p>
 
-                        <p>
-                            This area can later contain an interactive
-                            explanation of the system or process.
-                        </p>
-                    </div>
+        <div class="takeoff-simulation">
 
+            <div class="simulation-status">
+                <div>
+                    <span class="simulation-label">STATUS</span>
+                    <strong id="simulation-status">
+                        AIRCRAFT READY
+                    </strong>
                 </div>
-            </section>
+
+                <div>
+                    <span class="simulation-label">SPEED</span>
+                    <strong>
+                        <span id="simulation-speed">0</span> km/h
+                    </strong>
+                </div>
+
+                <div>
+                    <span class="simulation-label">ALTITUDE</span>
+                    <strong>
+                        <span id="simulation-altitude">0</span> m
+                    </strong>
+                </div>
+            </div>
+
+            <div class="runway-scene" id="runway-scene">
+
+                <div class="runway-sky"></div>
+
+                <div class="runway-ground">
+                    <div class="runway">
+                        <div class="runway-centre-line"></div>
+                    </div>
+                </div>
+
+                <div
+                    class="aircraft"
+                    id="aircraft"
+                    aria-label="Aircraft in takeoff simulation"
+                >
+                    <div class="aircraft-body"></div>
+                    <div class="aircraft-wing aircraft-wing-main"></div>
+                    <div class="aircraft-tail"></div>
+                </div>
+
+                <div class="takeoff-point">
+                    <span>TAKEOFF</span>
+                </div>
+
+            </div>
+
+            <div class="simulation-controls">
+
+                <button
+                    type="button"
+                    class="simulation-button"
+                    id="start-simulation"
+                >
+                    Start Takeoff
+                </button>
+
+                <button
+                    type="button"
+                    class="simulation-button secondary"
+                    id="reset-simulation"
+                >
+                    Reset
+                </button>
+
+            </div>
+
+            <div class="simulation-progress">
+
+                <div
+                    class="simulation-progress-step active"
+                    data-step="0"
+                >
+                    <span>01</span>
+                    Ready
+                </div>
+
+                <div
+                    class="simulation-progress-step"
+                    data-step="1"
+                >
+                    <span>02</span>
+                    Taxi
+                </div>
+
+                <div
+                    class="simulation-progress-step"
+                    data-step="2"
+                >
+                    <span>03</span>
+                    Cleared
+                </div>
+
+                <div
+                    class="simulation-progress-step"
+                    data-step="3"
+                >
+                    <span>04</span>
+                    Accelerate
+                </div>
+
+                <div
+                    class="simulation-progress-step"
+                    data-step="4"
+                >
+                    <span>05</span>
+                    Rotate
+                </div>
+
+                <div
+                    class="simulation-progress-step"
+                    data-step="5"
+                >
+                    <span>06</span>
+                    Liftoff
+                </div>
+
+            </div>
+
+            <div class="simulation-explanation">
+
+                <p class="section-label" id="simulation-stage-label">
+                    STAGE 01
+                </p>
+
+                <h3 id="simulation-stage-title">
+                    Aircraft Ready
+                </h3>
+
+                <p id="simulation-stage-description">
+                    The aircraft and flight crew complete the required
+                    checks before beginning the departure process.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
 
         <section class="topic-section">
             <div class="container">
@@ -503,6 +640,6 @@
             <p>&copy; 2026 Pit Lane & Runway.</p>
         </div>
     </footer>
-
+    <script src="../../scripts/topic-interactions.js"></script>
 </body>
 </html>
