@@ -1,0 +1,41 @@
+{
+    "type": "f1-drivers",
+    "items": [
+        {
+            "id": "ayrton-senna",
+            "name": "Ayrton Senna",
+            "era": "1980s–1990s",
+            "status": "past",
+            "image": "assets/images/drivers/ayrton-senna.jpeg",
+            "alt": "Ayrton Senna during his Formula 1 career",
+            "description": "Three-time World Champion remembered for exceptional qualifying speed and wet-weather driving."
+        },
+        {
+            "id": "michael-schumacher",
+            "name": "Michael Schumacher",
+            "era": "1990s–2000s",
+            "status": "past",
+            "image": "assets/images/drivers/michael-schumacher.jpeg",
+            "alt": "Michael Schumacher during his Formula 1 career",
+            "description": "Seven-time World Champion who helped establish Ferrari as a dominant force in modern Formula 1."
+        },
+        {
+            "id": "lewis-hamilton",
+            "name": "Lewis Hamilton",
+            "era": "2000s–present",
+            "status": "current",
+            "image": "assets/images/drivers/lewis-hamilton.jpeg",
+            "alt": "Lewis Hamilton",
+            "description": "Seven-time World Champion known for record-setting victories and sustained success across multiple eras."
+        },
+        {
+            "id": "max-verstappen",
+            "name": "Max Verstappen",
+            "era": "2010s–present",
+            "status": "current",
+            "image": "assets/images/drivers/max-verstappen.jpeg",
+            "alt": "Max Verstappen",
+            "description": "Multiple-time World Champion known for aggressive racing, consistency and exceptional race pace."
+        }
+    ]
+}
