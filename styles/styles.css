@@ -331,21 +331,27 @@ main {
     color: var(--medium-grey);
 }
 
-.text-link {
+.text-link,
+.meet-the-grid-link {
+    display: block;
+    width: fit-content;
+    margin-inline: auto;
+
     color: var(--black);
     font-weight: 700;
     text-transform: uppercase;
     font-size: 0.8rem;
+
     border-bottom: 1px solid var(--black);
 }
 
 .text-link:hover,
-.text-link:focus {
+.text-link:focus,
+.meet-the-grid-link:hover,
+.meet-the-grid-link:focus {
     color: var(--dark-ruby);
     border-bottom-color: var(--dark-ruby);
 }
-
-
 /* =========================================
    "We break systems down." — ruby red
 ========================================= */

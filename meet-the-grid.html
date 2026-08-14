@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Meet the Grid | Pit Lane &amp; Runway</title>
+
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/grid.css">
+</head>
+
+<body>
+
+    <header class="site-header">
+        <div class="container header-inner">
+
+            <a href="index.html" class="brand">
+                <p class="brand-name">Pit Lane &amp; Runway</p>
+                <p class="brand-tagline">
+                    How aviation and motorsport actually work —
+                    one system at a time.
+                </p>
+            </a>
+
+            <nav class="site-nav" aria-label="Main navigation">
+                <ul>
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+
+                    <li>
+                        <a href="topics/aviation/">Aviation</a>
+                    </li>
+
+                    <li>
+                        <a href="topics/f1/">Formula 1</a>
+                    </li>
+
+                    <li>
+                        <a href="glossary.html">Glossary</a>
+                    </li>
+                </ul>
+            </nav>
+
+        </div>
+    </header>
+
+
+    <main>
+
+        <section class="grid-hero">
+            <div class="container grid-hero__content">
+
+                <p class="eyebrow">FORMULA 1 · 2026</p>
+
+                <h1>Meet the Grid</h1>
+
+                <p class="grid-hero__intro">
+                    22 drivers. 11 teams. One very expensive way to go very fast.
+                </p>
+
+                <p>
+                    Meet the people and machines behind the modern Formula 1 grid.
+                </p>
+
+            </div>
+            <nav class="grid-tabs container" aria-label="Meet the Grid sections">
+
+            <button
+                class="grid-tab grid-tab--active"
+                type="button"
+                data-section="drivers">
+                Drivers
+            </button>
+
+            <button
+                class="grid-tab"
+                type="button"
+                data-section="teams">
+                Teams &amp; Cars
+            </button>
+
+        </nav>
+        </section>
+
+
+        
+
+
+        <section
+            id="drivers"
+            class="grid-section"
+            data-grid-section="drivers">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <p class="eyebrow">THE CHARACTERS</p>
+
+                    <h2>Meet the Drivers</h2>
+
+                    <p>
+                        The people who climb into the cars, take the risks
+                        and somehow make 300 km/h look routine.
+                    </p>
+
+                </div>
+
+                <div
+                    id="driver-grid"
+                    class="driver-grid"
+                    aria-live="polite">
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section
+            id="teams"
+            class="grid-section grid-section--hidden"
+            data-grid-section="teams">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <p class="eyebrow">THE MACHINES</p>
+
+                    <h2>Meet the Teams</h2>
+
+                    <p>
+                        Eleven teams. Eleven interpretations of how to build
+                        a machine capable of surviving the world's fastest
+                        travelling circus.
+                    </p>
+
+                </div>
+
+                <div
+                    id="team-grid"
+                    class="team-grid"
+                    aria-live="polite">
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>Pit Lane &amp; Runway</p>
+
+            <p>
+                How aviation and motorsport actually work —
+                one system at a time.
+            </p>
+        </div>
+    </footer>
+
+
+    <script src="data/f1-grid.js"></script>
+    <script src="scripts/grid.js"></script>
+
+</body>
+</html>
