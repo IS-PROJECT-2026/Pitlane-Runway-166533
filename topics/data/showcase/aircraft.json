@@ -5,7 +5,7 @@
             "id": "boeing-747",
             "name": "Boeing 747",
             "type": "Wide-body airliner",
-            "image": "../../assets/images/aircraft/boeing-747.jpeg",
+            "image": "assets/images/aircraft/boeing-747.jpeg",
             "alt": "Boeing 747 aircraft",
             "description": "One of the most recognizable commercial aircraft, famous for its distinctive upper deck."
         },
@@ -13,7 +13,7 @@
             "id": "concorde",
             "name": "Concorde",
             "type": "Supersonic airliner",
-            "image": "../../assets/images/aircraft/concorde.jpeg",
+            "image": "assets/images/aircraft/concorde.jpeg",
             "alt": "Concorde supersonic aircraft",
             "description": "A legendary passenger aircraft capable of sustained supersonic flight."
         },
@@ -21,7 +21,7 @@
             "id": "f22-raptor",
             "name": "F-22 Raptor",
             "type": "Air-superiority fighter",
-            "image": "../../assets/images/aircraft/f22-raptor.jpeg",
+            "image": "assets/images/aircraft/f22-raptor.jpeg",
             "alt": "F-22 Raptor fighter aircraft",
             "description": "A fifth-generation stealth fighter designed around speed, maneuverability and air superiority."
         },
@@ -29,7 +29,7 @@
             "id": "airbus-a350",
             "name": "Airbus A350",
             "type": "Wide-body airliner",
-            "image": "../../assets/images/aircraft/airbus-a350.jpeg",
+            "image": "assets/images/aircraft/airbus-a350.jpeg",
             "alt": "Airbus A350 aircraft",
             "description": "A modern long-haul aircraft designed around efficiency, composite materials and advanced aerodynamics."
         }
