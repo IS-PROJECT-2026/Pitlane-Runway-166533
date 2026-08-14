@@ -31,11 +31,82 @@
         }
     ],
     "interactiveConcepts": [
-        "Downforce and drag relationship",
-        "Airflow around the car",
-        "Front and rear wing effects",
-        "Aerodynamic balance"
-    ],
-    "glossary": [],
-    "testYourself": []
+    {
+        "id": "downforce-drag",
+        "title": "Downforce and Drag",
+        "description": "Explore the relationship between aerodynamic grip and resistance.",
+        "type": "aerodynamics"
+    },
+    {
+        "id": "airflow",
+        "title": "Airflow Around the Car",
+        "description": "Explore how airflow interacts with the car's aerodynamic surfaces.",
+        "type": "airflow"
+    },
+    {
+        "id": "wing-effects",
+        "title": "Front and Rear Wing Effects",
+        "description": "Explore how the front and rear wings influence aerodynamic performance.",
+        "type": "wing-balance"
+    },
+    {
+        "id": "aerodynamic-balance",
+        "title": "Aerodynamic Balance",
+        "description": "Explore how aerodynamic load is distributed between the front and rear of the car.",
+        "type": "balance"
+    }
+],
+    "glossary": [
+    {
+        "term": "Downforce",
+        "definition": "Aerodynamic force that pushes the car toward the track and increases tyre load."
+    },
+    {
+        "term": "Drag",
+        "definition": "Aerodynamic resistance that opposes the car's movement through the air."
+    },
+    {
+        "term": "Aerodynamic balance",
+        "definition": "The distribution of aerodynamic load between the front and rear of the car."
+    },
+    {
+        "term": "Airflow",
+        "definition": "The movement of air around and through the aerodynamic surfaces of the car."
+    }
+],
+    "testYourself": [
+    {
+        "question": "What is the main purpose of aerodynamic downforce?",
+        "options": [
+            "To make the car lighter",
+            "To push the car toward the track",
+            "To increase engine temperature",
+            "To reduce tyre contact"
+        ],
+        "answer": 1,
+        "explanation": "Downforce pushes the car toward the track, increasing the load on the tyres and helping the car generate grip through corners."
+    },
+    {
+        "question": "What is aerodynamic drag?",
+        "options": [
+            "A force that opposes the car's motion through the air",
+            "The force that turns the steering wheel",
+            "The weight of the driver",
+            "The force produced by the brakes"
+        ],
+        "answer": 0,
+        "explanation": "Drag is aerodynamic resistance that acts against the car's movement through the air. Reducing drag can help improve straight-line speed."
+    },
+    {
+        "question": "Why is aerodynamic balance important?",
+        "options": [
+            "It determines the driver's helmet size",
+            "It controls the fuel colour",
+            "It helps distribute aerodynamic load between the front and rear",
+            "It determines the race length"
+        ],
+        "answer": 2,
+        "explanation": "Aerodynamic balance describes how aerodynamic load is distributed between the front and rear of the car. A suitable balance helps the car remain predictable and stable."
+    }
+]
 }

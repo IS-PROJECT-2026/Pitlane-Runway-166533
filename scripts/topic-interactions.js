@@ -315,93 +315,38 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
     }
 
-    const quizData = {
-        aviation: [
-            {
-                question: "Who normally gives the final takeoff clearance?",
-                options: [
-                    "The cabin crew",
-                    "Air Traffic Control",
-                    "The airport security team",
-                    "The passengers"
-                ],
-                answer: 1,
-                explanation:
-                    "Air Traffic Control gives the aircraft its takeoff clearance when the runway and surrounding traffic situation allow it to depart safely."
-            },
-            {
-                question: "What does a pilot normally do if a takeoff instruction is unclear?",
-                options: [
-                    "Take off immediately",
-                    "Ignore the instruction",
-                    "Clarify the instruction with ATC",
-                    "Ask another passenger"
-                ],
-                answer: 2,
-                explanation:
-                    "The pilot should clarify an unclear instruction with ATC rather than guessing or proceeding without understanding it."
-            },
-            {
-                question: "What is a taxiway used for?",
-                options: [
-                    "Moving aircraft between airport areas",
-                    "Measuring aircraft altitude",
-                    "Controlling cabin temperature",
-                    "Storing passenger luggage"
-                ],
-                answer: 0,
-                explanation:
-                    "Taxiways provide the routes aircraft use to move between parking areas, runways and other parts of the airport."
-            }
-        ],
+    const loadTopicData = async (quiz) => {
+    const dataPath = quiz.dataset.topicData;
 
-        f1: [
-            {
-                question: "What is the main purpose of aerodynamic downforce?",
-                options: [
-                    "To make the car lighter",
-                    "To push the car toward the track",
-                    "To increase engine temperature",
-                    "To reduce tyre contact"
-                ],
-                answer: 1,
-                explanation:
-                    "Downforce pushes the car toward the track, increasing the load on the tyres and helping the car generate grip through corners."
-            },
-            {
-                question: "What is aerodynamic drag?",
-                options: [
-                    "A force that opposes the car's motion through the air",
-                    "The force that turns the steering wheel",
-                    "The weight of the driver",
-                    "The force produced by the brakes"
-                ],
-                answer: 0,
-                explanation:
-                    "Drag is aerodynamic resistance that acts against the car's movement through the air. Reducing drag can help improve straight-line speed."
-            },
-            {
-                question: "Why is aerodynamic balance important?",
-                options: [
-                    "It determines the driver's helmet size",
-                    "It controls the fuel colour",
-                    "It helps distribute aerodynamic load between the front and rear",
-                    "It determines the race length"
-                ],
-                answer: 2,
-                explanation:
-                    "Aerodynamic balance describes how aerodynamic load is distributed between the front and rear of the car. A suitable balance helps the car remain predictable and stable."
-            }
-        ]
-    };
+    if (!dataPath) {
+        console.error("No topic data path found for quiz.");
+        return null;
+    }
 
-    quizzes.forEach((quiz) => {
-        const quizType = quiz.dataset.quiz;
-        const questions = quizData[quizType];
+    try {
+        const response = await fetch(dataPath);
 
-        if (!questions) {
-            return;
+        if (!response.ok) {
+            throw new Error(
+                `Failed to load topic data: ${response.status}`
+            );
         }
+
+        return await response.json();
+    } catch (error) {
+        console.error("Unable to load topic data:", error);
+        return null;
+    }
+};
+
+quizzes.forEach(async (quiz) => {
+    const topicData = await loadTopicData(quiz);
+
+    if (!topicData || !topicData.testYourself) {
+        return;
+    }
+
+    const questions = topicData.testYourself;
 
         const currentElement =
             quiz.querySelector(".quiz-current");

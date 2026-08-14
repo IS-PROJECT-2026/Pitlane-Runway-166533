@@ -26,10 +26,76 @@
         }
     ],
     "interactiveConcepts": [
-        "Aircraft movement from parking position to runway",
-        "Ground and tower control communication",
-        "Takeoff clearance sequence"
-    ],
-    "glossary": [],
-    "testYourself": []
+    {
+        "id": "takeoff-sequence",
+        "title": "Takeoff Sequence",
+        "description": "Follow an aircraft from its parking position through taxiing and takeoff clearance.",
+        "type": "sequence"
+    },
+    {
+        "id": "atc-communication",
+        "title": "ATC Communication",
+        "description": "Explore the communication between pilots and air traffic control.",
+        "type": "communication"
+    },
+    {
+        "id": "clearance-sequence",
+        "title": "Clearance Sequence",
+        "description": "Step through holding short, line up and wait, and cleared for takeoff.",
+        "type": "clearance"
+    }
+],
+    "glossary": [
+    {
+        "term": "ATC",
+        "definition": "Air Traffic Control, which manages and coordinates aircraft movements."
+    },
+    {
+        "term": "Taxiway",
+        "definition": "A designated route used by aircraft to move between airport areas and runways."
+    },
+    {
+        "term": "Takeoff clearance",
+        "definition": "An ATC authorization allowing an aircraft to begin its takeoff."
+    },
+    {
+        "term": "Line up and wait",
+        "definition": "An instruction for an aircraft to enter the runway, align for departure and wait for further clearance."
+    }
+],
+    "testYourself": [
+    {
+        "question": "Who normally gives the final takeoff clearance?",
+        "options": [
+            "The cabin crew",
+            "Air Traffic Control",
+            "The airport security team",
+            "The passengers"
+        ],
+        "answer": 1,
+        "explanation": "Air Traffic Control gives the aircraft its takeoff clearance when the runway and surrounding traffic situation allow it to depart safely."
+    },
+    {
+        "question": "What does a pilot normally do if a takeoff instruction is unclear?",
+        "options": [
+            "Take off immediately",
+            "Ignore the instruction",
+            "Clarify the instruction with ATC",
+            "Ask another passenger"
+        ],
+        "answer": 2,
+        "explanation": "The pilot should clarify an unclear instruction with ATC rather than guessing or proceeding without understanding it."
+    },
+    {
+        "question": "What is a taxiway used for?",
+        "options": [
+            "Moving aircraft between airport areas",
+            "Measuring aircraft altitude",
+            "Controlling cabin temperature",
+            "Storing passenger luggage"
+        ],
+        "answer": 0,
+        "explanation": "Taxiways provide the routes aircraft use to move between parking areas, runways and other parts of the airport."
+    }
+]
 }

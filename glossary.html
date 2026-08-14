@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="A glossary of aviation and Formula 1 terminology."
+    >
+
+    <title>Glossary | Pit Lane & Runway</title>
+
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="container header-inner">
+
+            <a href="index.html" class="brand">
+                <p class="brand-name">Pit Lane &amp; Runway</p>
+                <p class="brand-tagline">
+                    How aviation and motorsport actually work —
+                    one system at a time.
+                </p>
+            </a>
+
+            <nav class="site-nav" aria-label="Main navigation">
+                <ul>
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+
+                    <li>
+                        <a href="topics/aviation/">Aviation</a>
+                    </li>
+
+                    <li>
+                        <a href="topics/f1/">Formula 1</a>
+                    </li>
+
+                    <li>
+                        <a href="glossary.html" aria-current="page">
+                            Glossary
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+        </div>
+    </header>
+
+    <main>
+
+        <section class="topic-header">
+            <div class="container">
+
+                <p class="section-label">REFERENCE</p>
+
+                <h1>Glossary</h1>
+
+                <p class="topic-introduction">
+                    A quick reference for the terminology used throughout
+                    Pit Lane &amp; Runway.
+                </p>
+
+            </div>
+        </section>
+
+        <section class="topic-section">
+            <div class="container">
+
+                <div class="glossary-controls">
+
+                    <label for="glossary-search">
+                        Search glossary
+                    </label>
+
+                    <input
+                        type="search"
+                        id="glossary-search"
+                        placeholder="Search a term..."
+                        autocomplete="off"
+                    >
+
+                    <div
+                        class="glossary-filters"
+                        role="group"
+                        aria-label="Filter glossary by domain"
+                    >
+                        <button
+                            type="button"
+                            class="glossary-filter active"
+                            data-domain="all"
+                        >
+                            All
+                        </button>
+
+                        <button
+                            type="button"
+                            class="glossary-filter"
+                            data-domain="aviation"
+                        >
+                            Aviation
+                        </button>
+
+                        <button
+                            type="button"
+                            class="glossary-filter"
+                            data-domain="f1"
+                        >
+                            Formula 1
+                        </button>
+                    </div>
+
+                </div>
+
+                <div id="glossary-content">
+
+                    <section
+                        class="glossary-domain"
+                        data-domain-section="aviation"
+                    >
+                        <p class="section-label">AVIATION</p>
+
+                        <dl
+                            id="aviation-glossary"
+                            class="topic-glossary"
+                        ></dl>
+                    </section>
+
+                    <section
+                        class="glossary-domain"
+                        data-domain-section="f1"
+                    >
+                        <p class="section-label">FORMULA 1</p>
+
+                        <dl
+                            id="f1-glossary"
+                            class="topic-glossary"
+                        ></dl>
+                    </section>
+
+                </div>
+
+                <p
+                    id="glossary-empty"
+                    class="glossary-empty"
+                    hidden
+                >
+                    No glossary terms match your search.
+                </p>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2026 Pit Lane &amp; Runway.</p>
+        </div>
+    </footer>
+
+    <script src="scripts/glossary.js"></script>
+
+</body>
+</html>
