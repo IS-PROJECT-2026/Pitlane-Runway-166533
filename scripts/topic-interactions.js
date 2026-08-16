@@ -311,6 +311,26 @@ document.addEventListener("DOMContentLoaded", () => {
 document.addEventListener("DOMContentLoaded", () => {
     const quizzes = document.querySelectorAll(".topic-quiz");
 
+    const progressKey = "pitlane-runway-progress";
+
+    function getLearningProgress() {
+        return JSON.parse(
+            localStorage.getItem(progressKey) || "{}"
+        );
+    }
+
+    function markTopicComplete(topicId) {
+        if (!topicId) return;
+
+        const progress = getLearningProgress();
+
+        progress[topicId] = true;
+
+        localStorage.setItem(
+            progressKey,
+            JSON.stringify(progress)
+        );
+    }
     if (!quizzes.length) {
         return;
     }
@@ -452,6 +472,9 @@ quizzes.forEach(async (quiz) => {
         }
 
         function showResult() {
+            const topicId = quiz.dataset.topicId;
+
+            markTopicComplete(topicId);
             optionsElement.innerHTML = "";
             feedbackElement.textContent = "";
             nextButton.hidden = true;

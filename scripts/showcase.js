@@ -68,7 +68,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 <div class="showcase-image-wrapper">
                     <img
                         class="showcase-image"
-                        src="/Pitlane-Runway-166533/${item.image}"
+                        src="${new URL(item.image, document.baseURI).href}"
                         alt="${item.alt}"
                         loading="lazy"
                     >
