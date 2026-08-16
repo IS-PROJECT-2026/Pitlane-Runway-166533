@@ -42,7 +42,8 @@
 
 ### A. Milestones and Issues
 ### Milestones
-![alt text](Milestones.png)
+<img width="2572" height="1584" alt="image" src="https://github.com/user-attachments/assets/eb9f5646-89bf-4dde-a12d-6019898c0f1e" />
+
 
 * **Caption:** The GitHub milestones show how the project was organized into progressive stages, from initial setup through foundations and final depth and polish.
 
